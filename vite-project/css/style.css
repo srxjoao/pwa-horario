@@ -1,0 +1,113 @@
+/* css/style.css */
+
+:root {
+  --primary-blue: #1976d2;
+  --medium-blue: #64b5f6;
+  --light-blue: #bbdefb;
+  --dark-blue: #0d47a1;
+  --text-light: #ffffff;
+  --border-color: #90caf9;
+  --background: #f5f9ff;
+}
+
+body.fullscreen {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.schedule-table thead th {
+  background: var(--medium-blue);
+  color: var(--text-light);
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  border-right: 1px solid var(--border-color);
+  user-select: none;
+}
+
+.schedule-table thead th:last-child {
+  border-right: none;
+}
+
+.schedule-table tbody td {
+  padding: 12px 8px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 14px;
+  background: var(--light-blue);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  vertical-align: middle;
+}
+
+.schedule-table tbody tr:nth-child(even) td {
+  background: #e3f2fd;
+}
+
+.schedule-table tbody td:hover {
+  background: var(--medium-blue);
+  color: var(--text-light);
+  cursor: default;
+}
+
+.time-cell {
+  background: var(--dark-blue) !important;
+  color: var(--text-light) !important;
+  font-weight: 600;
+  width: 80px;
+  user-select: none;
+}
+
+.empty-cell {
+  background: #f8fdff !important;
+}
+
+@media (max-width: 768px) {
+  body.fullscreen {
+    padding: 10px;
+  }
+  .container {
+    border-radius: 8px;
+    margin: 0 5px;
+  }
+  .schedule-table thead th,
+  .schedule-table tbody td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+  .time-cell {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-table thead th,
+  .schedule-table tbody td {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+  .time-cell {
+    width: 50px;
+  }
+}
